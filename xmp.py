@@ -5,6 +5,8 @@
     ~~~~~~
 
     Parses XMP metadata from PDF files.
+    Courtesy:
+        http://blog.matt-swain.com/post/25650072381/a-lightweight-xmp-parser-for-extracting-pdf-metadata-in
 """
 
 from collections import defaultdict
