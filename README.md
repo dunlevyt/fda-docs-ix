@@ -12,14 +12,29 @@ Dependencies Used
 * Elasticsearch 0.90.9
 * Neo4j River Plugin 0.90.9.0
 
-To-Do
------
-* Add useful PDF document info and metadata as properties and relations in Neo4j
-* Create a more useful index in ES
 
-Blockers
---------
-* Neo4j River Plugin install had numerous dependency issues on install
-* Neo4j River Plugin lacking documentation
-* Automated index created by Neo4j River Plugin appears to have limited use as configured
+Execution
+---------
+* line 65, 'db_path' is the url of the Neo4j database
+* line 70, 'es_cluster' are the connection parameters for the elasticsearch cluster
+* line 185, 'fda_base_url' is the http host of the source of pdf documents
+* line 188, the path and document to parse for links to pdf documents
+* python fda-docs-ix.py
+
+Results
+-------
+* Neo4j browser: http://localhost:7474/browser/
+ * match (n) return n;
+ * The default graph in the Neo4j browser can be seen here: <neo_screenshot.png>
+ * Keyword query:
+ * match q(d:PDFDocument)-[r:HAS_KEYWORD]->(k:Keyword) where k.name='menopause' return d.title, d.url;
+ * Results can be seen here <neo_keyword_query.png>
+* Kibana dashboard:
+ * Querying for the same keyword against the document index: <kibana_screenshot.png>
+
+Conclusion
+----------
+* Successfully extracted document metadata and created graph results in neo4j
+* Successfully created full text index of pdf documents in Elasticsearch
+* Successfully utilized Kibana dashboard for ad-hoc searches
 
