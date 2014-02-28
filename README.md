@@ -25,12 +25,15 @@ Results
 -------
 * Neo4j browser: http://localhost:7474/browser/
  * match (n) return n;
- * The default graph in the Neo4j browser can be seen here: <neo_screenshot.png>
+ * The default graph in the Neo4j browser can be seen here: 
+  * https://github.com/dunlevyt/fda-docs-ix/blob/master/neo_screenshot.png
  * Keyword query:
  * match q(d:PDFDocument)-[r:HAS_KEYWORD]->(k:Keyword) where k.name='menopause' return d.title, d.url;
- * Results can be seen here <neo_keyword_query.png>
+ * Results can be seen here:
+  * https://github.com/dunlevyt/fda-docs-ix/blob/master/neo_keyword_query.png
 * Kibana dashboard:
- * Querying for the same keyword against the document index: <kibana_screenshot.png>
+ * Querying for the same keyword against the document index: 
+  * https://github.com/dunlevyt/fda-docs-ix/blob/master/kibana_screenshot.png
 
 Conclusion
 ----------
